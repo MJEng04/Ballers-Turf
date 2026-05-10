@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css"/>
+    <link rel="icon" type="image/png" href="images/BT-Logo.png">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="css/site.css" rel="stylesheet"/>
+    <title>Events - Ballers Turf</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50">
+        <div class="navbar bg-base-100 shadow-md">
+            <div class="navbar-start">
+                <a href="index.html">
+                    <img src="images/BT-Logo.png" alt="Ballers Turf Logo" class="h-20 w-auto">
+                </a>
+            </div>
+            <div class="navbar-end">
+                <ul class="menu menu-horizontal px-1 font-bold text-lg">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="events.html">EVENTS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="admin.html">ADMIN</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Events Hero Section -->
+    <div class="hero min-h-[400px] events-hero">
+        <div class="hero-overlay bg-black/50"></div>
+        <div class="hero-content text-center text-neutral-content">
+            <div class="max-w-md">
+                <h1 class="text-5xl font-bold">Upcoming Events</h1>
+                <p class="py-6">Stay up to date with all fixtures, activities, and special events at Ballers Turf.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Events Listing Section -->
+    <section class="container mx-auto px-4 py-16">
+
+        <!-- Search & Filter Controls -->
+        <div class="flex flex-col md:flex-row gap-4 mb-8">
+
+            <!-- Search Bar -->
+            <div class="form-control w-full">
+                <input 
+                    type="text" 
+                    id="eventSearch"
+                    placeholder="Search events..."
+                    class="input input-bordered w-full"
+                />
+            </div>
+
+            <!-- Category Filter -->
+            <div class="form-control w-full md:w-64">
+                <select id="categoryFilter" class="select select-bordered">
+                    <option value="">All Categories</option>
+                    <option value="Event">Event</option>
+                    <option value="Tournament">Tournament</option>
+                    <option value="Trials">Trials</option>
+                </select>
+            </div>
+
+        </div>
+
+
+        <div id="eventsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Event Card 1 -->
+            <a href="event-detail.html?id=1" class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+                <figure class="h-48">
+                    <img src="images/event1.png" alt="Field" class="w-full h-full object-cover"/>
+                </figure>
+                <div class="card-body">
+                    <h2 class="card-title">Grand Opening Event</h2>
+                    <p class="text-sm text-base-content/70">Nottingham, UK</p>
+                    <p class="text-sm text-base-content/70">19th March 2026</p>
+                    <p>Celebrate the launch of Ballers Turf with a day filled with football, music and community - everyone is welcome.</p>
+                    <div class="card-actions justify-end mt-6">
+                        <span class="badge badge-primary">Event</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Event Card 2 -->
+            <a href="event-detail.html?id=2" class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+                <figure class="h-48">
+                    <img src="images/event2.jpg" alt="Trophy" class="w-full h-full object-cover"/>
+                </figure>
+                <div class="card-body">
+                    <h2 class="card-title">First Annual Ballers Cup</h2>
+                    <p class="text-sm text-base-content/70">Nottingham, UK</p>
+                    <p class="text-sm text-base-content/70">10th April 2026</p>
+                    <p>Be part of the first ever Ballers Cup where you can expect goals, drama and a buzzing atmosphere. Whether you are competing or watching, the Ballers Cup is not one to miss!</p>
+                    <div class="card-actions justify-end mt-6">
+                        <span class="badge badge-secondary">Tournament</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Event Card 3 -->
+            <a href="event-detail.html?id=3" class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+                <figure class="h-48">
+                    <img src="images/event3.jpg" alt="Football Trials" class="w-full h-full object-cover"/>
+                </figure>
+                <div class="card-body">
+                    <h2 class="card-title">Palais FC Tryouts</h2>
+                    <p class="text-sm text-base-content/70">Nottingham, UK</p>
+                    <p class="text-sm text-base-content/70">27th April 2026</p>
+                    <p>Showcase your skills, meet specially trained coaches, and compete against others for a place in the region's rising football team.</p>
+                    <div class="card-actions justify-end mt-6">
+                        <span class="badge badge-accent">Trials</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-base-200 text-base-content p-10">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <span class="footer-title">Ballers Turf</span>
+                    <p class="text-sm">Home of the Ballers. Dedicated to providing a space for the youth to grow.</p>
+                </div>
+                <div>
+                    <span class="footer-title">Quick Links</span>
+                    <a href="index.html" class="link link-hover block">Home</a>
+                    <a href="events.html" class="link link-hover block">Events</a>
+                    <a href="contact.html" class="link link-hover block">Contact</a>
+                    <a href="admin.html" class="link link-hover block">Admin</a>
+                </div>
+                <div>
+                    <span class="footer-title">Support</span>
+                    <a href="/help" class="link link-hover block">Help Centre</a>
+                    <a href="/terms" class="link link-hover block">Terms of Service</a>
+                    <a href="/privacy" class="link link-hover block">Privacy Policy</a>
+                    <a href="/faq" class="link link-hover block">FAQ</a>
+                </div>
+                <div>
+                    <span class="footer-title">Connect</span>
+                    <a href="https://www.facebook.com/" class="link link-hover block">Facebook</a>
+                    <a href="https://x.com/" class="link link-hover block">Twitter</a>
+                    <a href="https://www.instagram.com/" class="link link-hover block">Instagram</a>
+                    <a href="https://www.youtube.com/" class="link link-hover block">Youtube</a>
+                </div>
+            </div>
+        </div>        
+        
+        <div class="footer footer-center p-2 text-base-content mt-4">
+            <p class="text-sm">All images sourced from Google Images for educational use.</p>
+        </div>
+
+        <div class="footer footer-center p-4 text-base-content mt-6">
+            <p>Copyright © 2024 Ballers Turf - Martin Ofori N1264601</p>
+        </div>
+
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/site.js"></script>
+</body>
+</html>

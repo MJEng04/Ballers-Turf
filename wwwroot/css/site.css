@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+}
+
+h1, h2 {
+    font-style: italic;
+}
+
+h1 {
+    font-size: 70px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+p {
+    font-size: 18px;
+}
+
+/* Hero Background Images */
+.admin-hero {
+    background-image: url('../images/admin-hero.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.contact-hero {
+    background-image: url('../images/contact-hero.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.events-hero {
+    background-image: url('../images/event-hero.jpg');
+    background-size: cover;
+    background-position: center;
+}

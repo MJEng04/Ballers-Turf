@@ -1,0 +1,32 @@
+# Build output
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Secrets - never commit these
+appsettings.json
+appsettings.Development.json
+*.env
+
+# Database
+*.db
+*.sqbpro
+
+# Binary files
+mk_5202_d
+
+# VS Code
+.vscode/
+
+# Compiled modules and dependencies
+modules/
+
+# Mac system files
+.DS_Store
+wwwroot/.DS_Store
+wwwroot/lib/.DS_Store
+wwwroot/lib/jquery/.DS_Store

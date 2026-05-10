@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css"/>
+    <link rel="icon" type="image/png" href="images/BT-Logo.png">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="css/site.css" rel="stylesheet"/>
+    <title>My Bookings - Ballers Turf</title>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="sticky top-0 z-50">
+    <div class="navbar bg-base-100 shadow-md">
+        <div class="navbar-start">
+            <a href="index.html">
+                <img src="images/BT-Logo.png" alt="Ballers Turf Logo" class="h-20 w-auto">
+            </a>
+        </div>
+        <div class="navbar-end">
+            <ul class="menu menu-horizontal px-1 font-bold text-lg">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="events.html">EVENTS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<div class="hero min-h-[200px] bg-base-200">
+    <div class="hero-content text-center">
+        <h1 class="text-4xl font-bold">My Bookings</h1>
+    </div>
+</div>
+
+<section class="container mx-auto px-4 py-16 max-w-3xl">
+    <div id="bookingsContainer">
+        <div class="text-center py-8">Loading your bookings...</div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-base-200 text-base-content p-10">
+    <div class="footer footer-center p-4">
+        <p>Copyright © 2024 Ballers Turf - Martin Ofori N1264601</p>
+    </div>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>

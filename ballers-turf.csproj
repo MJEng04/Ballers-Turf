@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Reference Include="api">
+            <HintPath>./modules/api/api.dll</HintPath>
+        </Reference>
+        <Reference Include="mk_5202_i">
+            <HintPath>./modules/mk_5202_i/mk_5202_i.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="modules/api/*.dll" CopyToOutputDirectory="PreserveNewest" Visible="false" Link="%(Filename)%(Extension)" />
+        <None Include="modules/api/*.json" CopyToOutputDirectory="PreserveNewest" Visible="false" Link="%(Filename)%(Extension)" />
+        <None Include="modules/api/runtimes/**" CopyToOutputDirectory="PreserveNewest" Visible="false" LinkBase="runtimes" />
+        <None Include="modules/mk_5202_i/*.dll" CopyToOutputDirectory="PreserveNewest" Visible="false" Link="%(Filename)%(Extension)" />
+        <None Include="modules/mk_5202_i/*.json" CopyToOutputDirectory="PreserveNewest" Visible="false" Link="%(Filename)%(Extension)" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Dapper" Version="2.1.66" />
+        <PackageReference Include="Dapper-QueryBuilder" Version="2.0.0" />
+        <PackageReference Include="Dapper.Contrib" Version="2.0.78" />
+        <PackageReference Include="Dapper.Fluent" Version="2.0.0" />
+        <PackageReference Include="Dapper.FluentMap" Version="2.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.0" />
+        <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.9" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.0">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.OpenApi" Version="1.6.17" />
+    </ItemGroup>
+
+</Project>

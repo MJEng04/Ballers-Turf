@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" href="images/BT-Logo.png">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="css/site.css" rel="stylesheet" />
+    <title>Admin - Ballers Turf</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50">
+        <div class="navbar bg-base-100 shadow-md">
+            <div class="navbar-start">
+                <a href="index.html">
+                    <img src="images/BT-Logo.png" alt="Ballers Turf Logo" class="h-20 w-auto">
+                </a>
+            </div>
+            <div class="navbar-end">
+                <ul class="menu menu-horizontal px-1 font-bold text-lg">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="events.html">EVENTS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="admin.html">ADMIN</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Admin Hero -->
+    <div class="hero min-h-[400px] admin-hero">
+        <div class="hero-overlay bg-black/50"></div>
+        <div class="hero-content text-center text-neutral-content">
+            <div class="max-w-md">
+                <h1 class="text-5xl font-bold">Admin Panel</h1>
+                <p class="py-6">Manage events, organizers, and comments for your Event App platform.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Forms -->
+    <section class="container mx-auto px-4 py-16">
+        <div class="max-w-4xl mx-auto space-y-12">
+
+            <!-- Create Event Organizer -->
+            <div>
+                <h2 class="text-3xl font-bold mb-6">Create Event Organizer</h2>
+                <form id="organizerForm" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Organizer Name</label>
+                        <input type="text" id="organizerName" class="input bg-base-200 w-full" placeholder="Enter organizer name" required />
+                        <span class="text-error text-sm mt-1 hidden" id="organizerNameError"></span>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Contact Email</label>
+                        <input type="email" id="organizerEmail" class="input bg-base-200 w-full" placeholder="organizer@example.com" required />
+                        <span class="text-error text-sm mt-1 hidden" id="organizerEmailError"></span>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Phone Number</label>
+                        <input type="tel" id="organizerPhone" class="input bg-base-200 w-full" placeholder="+44 123 456 7890" required />
+                        <span class="text-error text-sm mt-1 hidden" id="organizerPhoneError"></span>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Organization Description</label>
+                        <textarea id="organizerDescription" class="textarea bg-base-200 w-full h-24" placeholder="Brief description of the organization" required></textarea>
+                        <span class="text-error text-sm mt-1 hidden" id="organizerDescriptionError"></span>
+                    </div>
+                    <div class="pt-4">
+                        <button type="submit" class="btn btn-primary w-full">Create Organizer</button>
+                    </div>
+                    <div id="organizerResponse" class="mt-4 hidden"></div>
+                </form>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Manage Organizers -->
+            <div>
+                <h2 class="text-3xl font-bold mb-6">Manage Organizers</h2>
+                <div id="manageOrganizersContainer" class="space-y-4"></div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Create Event Form -->
+            <div>
+                <h2 class="text-3xl font-bold mb-6">Create New Event</h2>
+                <form id="eventForm" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Event Title</label>
+                        <input type="text" id="eventTitle" class="input bg-base-200 w-full" placeholder="Enter event title" required />
+                        <span class="text-error text-sm mt-1 hidden" id="eventTitleError"></span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Event Date</label>
+                            <input type="date" id="eventDate" class="input bg-base-200 w-full" required />
+                            <span class="text-error text-sm mt-1 hidden" id="eventDateError"></span>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Event Time</label>
+                            <input type="time" id="eventTime" class="input bg-base-200 w-full" required />
+                            <span class="text-error text-sm mt-1 hidden" id="eventTimeError"></span>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Location</label>
+                        <input type="text" id="eventLocation" class="input bg-base-200 w-full" placeholder="Enter event location" required />
+                        <span class="text-error text-sm mt-1 hidden" id="eventLocationError"></span>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Event Description</label>
+                        <textarea id="eventDescription" class="textarea bg-base-200 w-full h-32" placeholder="Detailed description of the event" required></textarea>
+                        <span class="text-error text-sm mt-1 hidden" id="eventDescriptionError"></span>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Event Category</label>
+                        <select id="eventCategory" class="select select-bordered bg-base-200 w-full" required>
+                            <option value="">Select a category</option>
+                            <option value="Event">Event</option>
+                            <option value="Tournament">Tournament</option>
+                            <option value="Trials">Trials</option>
+                            <option value="General">General</option>
+                        </select>
+                        <span class="text-error text-sm mt-1 hidden" id="eventCategoryError"></span>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Organizer ID</label>
+                        <input type="number" id="eventOrganizerId" class="input bg-base-200 w-full" placeholder="Enter organizer ID" required />
+                        <span class="text-error text-sm mt-1 hidden" id="eventOrganizerIdError"></span>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Image URLs (comma-separated for multiple images)</label>
+                        <textarea id="eventImage" class="textarea bg-base-200 w-full h-24" placeholder="images/event1.png, images/event2.jpg, images/event3.jpg"></textarea>
+                        <span class="text-sm text-base-content/70 mt-1">Enter multiple image paths separated by commas.</span>
+                        <span class="text-error text-sm mt-1 hidden" id="eventImageError"></span>
+                    </div>
+                    <div class="pt-4">
+                        <button type="submit" class="btn btn-primary w-full">Create Event</button>
+                    </div>
+                    <div id="eventResponse" class="mt-4 hidden"></div>
+                </form>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Manage Events -->
+            <div>
+                <h2 class="text-3xl font-bold mb-6">Manage Events</h2>
+                <div id="manageEventsContainer" class="space-y-4"></div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Add Comment Form -->
+            <div>
+                <h2 class="text-3xl font-bold mb-6">Add Comment</h2>
+                <form id="commentForm" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Event ID</label>
+                        <input type="number" id="commentEventId" class="input bg-base-200 w-full" placeholder="Enter event ID" required />
+                        <span class="text-error text-sm mt-1 hidden" id="commentEventIdError"></span>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Name</label>
+                        <input type="text" id="commenterName" class="input bg-base-200 w-full" placeholder="Enter your name" required />
+                        <span class="text-error text-sm mt-1 hidden" id="commenterNameError"></span>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Comment</label>
+                        <textarea id="commentText" class="textarea bg-base-200 w-full h-32" placeholder="Write your comment here..." required></textarea>
+                        <span class="text-error text-sm mt-1 hidden" id="commentTextError"></span>
+                    </div>
+                    <div class="pt-4">
+                        <button type="submit" class="btn btn-primary w-full">Add Comment</button>
+                    </div>
+                    <div id="commentResponse" class="mt-4 hidden"></div>
+                </form>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Contact Messages -->
+            <div>
+                <h2 class="text-3xl font-bold mb-6">Contact Messages</h2>
+                <div id="messagesContainer" class="space-y-4"></div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- All Bookings -->
+            <div>
+                <h2 class="text-3xl font-bold mb-6">All Bookings</h2>
+                <div id="adminBookingsContainer" class="space-y-4"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Edit Event Modal -->
+    <dialog id="editEventModal" class="modal">
+        <div class="modal-box">
+            <h3 class="font-bold text-lg mb-4">Edit Event</h3>
+            <input type="hidden" id="editEventId" />
+            <div class="space-y-3">
+                <input type="text" id="editEventTitle" class="input bg-base-200 w-full" placeholder="Title" />
+                <input type="text" id="editEventLocation" class="input bg-base-200 w-full" placeholder="Location" />
+                <textarea id="editEventDescription" class="textarea bg-base-200 w-full" placeholder="Description"></textarea>
+                <select id="editEventCategory" class="select bg-base-200 w-full">
+                    <option value="Event">Event</option>
+                    <option value="Tournament">Tournament</option>
+                    <option value="Trials">Trials</option>
+                    <option value="General">General</option>
+                </select>
+            </div>
+            <div class="modal-action">
+                <button onclick="saveEditEvent()" class="btn btn-primary">Save</button>
+                <button onclick="document.getElementById('editEventModal').close()" class="btn">Cancel</button>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Edit Organizer Modal -->
+    <dialog id="editOrganizerModal" class="modal">
+        <div class="modal-box">
+            <h3 class="font-bold text-lg mb-4">Edit Organizer</h3>
+            <input type="hidden" id="editOrganizerId" />
+            <div class="space-y-3">
+                <input type="text" id="editOrganizerName" class="input bg-base-200 w-full" placeholder="Name" />
+                <input type="email" id="editOrganizerEmail" class="input bg-base-200 w-full" placeholder="Email" />
+                <input type="tel" id="editOrganizerPhone" class="input bg-base-200 w-full" placeholder="Phone" />
+                <textarea id="editOrganizerDescription" class="textarea bg-base-200 w-full" placeholder="Description"></textarea>
+            </div>
+            <div class="modal-action">
+                <button onclick="saveEditOrganizer()" class="btn btn-primary">Save</button>
+                <button onclick="document.getElementById('editOrganizerModal').close()" class="btn">Cancel</button>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Footer -->
+    <footer class="bg-base-200 text-base-content p-10">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <span class="footer-title">Ballers Turf</span>
+                    <p class="text-sm">Home of the Ballers. Dedicated to providing a space for the youth to grow.</p>
+                </div>
+                <div>
+                    <span class="footer-title">Quick Links</span>
+                    <a href="index.html" class="link link-hover block">Home</a>
+                    <a href="events.html" class="link link-hover block">Events</a>
+                    <a href="contact.html" class="link link-hover block">Contact</a>
+                    <a href="admin.html" class="link link-hover block">Admin</a>
+                </div>
+                <div>
+                    <span class="footer-title">Support</span>
+                    <a href="/help" class="link link-hover block">Help Centre</a>
+                    <a href="/terms" class="link link-hover block">Terms of Service</a>
+                    <a href="/privacy" class="link link-hover block">Privacy Policy</a>
+                    <a href="/faq" class="link link-hover block">FAQ</a>
+                </div>
+                <div>
+                    <span class="footer-title">Connect</span>
+                    <a href="https://www.facebook.com/" class="link link-hover block">Facebook</a>
+                    <a href="https://x.com/" class="link link-hover block">Twitter</a>
+                    <a href="https://www.instagram.com/" class="link link-hover block">Instagram</a>
+                    <a href="https://www.youtube.com/" class="link link-hover block">Youtube</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer footer-center p-2 text-base-content mt-4">
+            <p class="text-sm">All images sourced from Google Images for educational use.</p>
+        </div>
+        <div class="footer footer-center p-4 text-base-content mt-6">
+            <p>Copyright © 2024 Ballers Turf - Martin Ofori N1264601</p>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/site.js"></script>
+</body>
+</html>

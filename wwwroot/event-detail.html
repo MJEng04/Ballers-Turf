@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css"/>
+    <link rel="icon" type="image/png" href="images/BT-Logo.png">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="css/site.css" rel="stylesheet"/>
+    <title>Grand Opening - Ballers Turf</title>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="sticky top-0 z-50">
+    <div class="navbar bg-base-100 shadow-md">
+        <div class="navbar-start">
+            <a href="index.html">
+                <img src="images/BT-Logo.png" alt="Ballers Turf Logo" class="h-20 w-auto">
+            </a>
+        </div>
+        <div class="navbar-end">
+            <ul class="menu menu-horizontal px-1 font-bold text-lg">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="events.html">EVENTS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="admin.html">ADMIN</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Event Detail Section -->
+<section class="container mx-auto px-4 py-16">
+    <div class="max-w-5xl mx-auto">
+
+        <!-- Back Button -->
+        <div class="mb-6">
+            <a href="events.html" class="btn btn-ghost">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+                Back to Events
+            </a>
+        </div>
+
+        <!-- Event Header -->
+        <div class="mb-8" id="eventHeader">
+            <h1 class="text-4xl font-bold mb-4">Ballers Turf Grand Opening</h1>
+
+            <div class="flex flex-wrap gap-4 text-base-content/70">
+                <!-- Date -->
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <span>19th March 2026</span>
+                </div>
+
+                <!-- Time -->
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>3:00 PM - 7:00 PM</span>
+                </div>
+
+                <!-- Location -->
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <span>Ballers Turf, Nottingham, UK</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image Gallery -->
+        <div class="mb-12" id="imageGallery">
+            <!-- Main Image Display -->
+            <div class="relative h-96 rounded-lg overflow-hidden mb-4" id="mainImageContainer">
+                <img id="mainImage" src="images/event1.png" class="w-full h-full object-cover transition-transform duration-300 cursor-pointer" alt="Event Image">
+            </div>
+
+            <!-- Thumbnail Gallery -->
+            <div class="flex gap-2 overflow-x-auto" id="thumbnailGallery">
+                <!-- Thumbnails will be dynamically loaded here -->
+                <img src="images/event1.png" class="w-24 h-24 object-cover rounded cursor-pointer border-2 border-primary" alt="Thumbnail">
+            </div>
+        </div>
+
+        <!-- Description -->
+        <div class="mb-12" id="eventDescription">
+            <h2 class="text-3xl font-bold mb-4">About This Event</h2>
+
+            <p class="text-lg mb-4">
+            </p>
+
+        </div>
+
+        <!-- Organizer -->
+        <div class="bg-base-200 p-6 rounded-lg mb-12" id="eventOrganizer">
+            <h2 class="text-3xl font-bold mb-4">Event Organizer</h2>
+            <h3 class="text-xl font-semibold mb-2">Ballers Turf Management</h3>
+            <p class="mb-3">Our in-house team handles all events, weekly sessions, community programmes, and private pitch bookings.</p>
+
+            <div class="flex flex-wrap gap-4 text-base-content/70">
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <span>events@ballersturf.co.uk</span>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    <span>+44 7512 345678</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-base-200 p-6 rounded-lg mb-12" id="bookingSection"></div>
+        <div id="addCommentSection" class="mb-6"></div>
+
+        <!-- Comments -->
+        <div id="commentsSection">
+            <h2 class="text-3xl font-bold mb-6">Comments</h2>
+
+            <div class="space-y-4" id="commentsList">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Footer -->
+    <footer class="bg-base-200 text-base-content p-10">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <span class="footer-title">Ballers Turf</span>
+                    <p class="text-sm">Home of the Ballers. Dedicated to providing a space for the youth to grow.</p>
+                </div>
+                <div>
+                    <span class="footer-title">Quick Links</span>
+                    <a href="index.html" class="link link-hover block">Home</a>
+                    <a href="events.html" class="link link-hover block">Events</a>
+                    <a href="contact.html" class="link link-hover block">Contact</a>
+                    <a href="admin.html" class="link link-hover block">Admin</a>
+                </div>
+                <div>
+                    <span class="footer-title">Support</span>
+                    <a href="/help" class="link link-hover block">Help Centre</a>
+                    <a href="/terms" class="link link-hover block">Terms of Service</a>
+                    <a href="/privacy" class="link link-hover block">Privacy Policy</a>
+                    <a href="/faq" class="link link-hover block">FAQ</a>
+                </div>
+                <div>
+                    <span class="footer-title">Connect</span>
+                    <a href="https://www.facebook.com/" class="link link-hover block">Facebook</a>
+                    <a href="https://x.com/" class="link link-hover block">Twitter</a>
+                    <a href="https://www.instagram.com/" class="link link-hover block">Instagram</a>
+                    <a href="https://www.youtube.com/" class="link link-hover block">Youtube</a>
+                </div>
+            </div>
+        </div>        
+        
+        <div class="footer footer-center p-2 text-base-content mt-4">
+            <p class="text-sm">All images sourced from Google Images for educational use.</p>
+        </div>
+
+        <div class="footer footer-center p-4 text-base-content mt-6">
+            <p>Copyright © 2024 Ballers Turf - Martin Ofori N1264601</p>
+        </div>
+
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/site.js"></script>
+</body>
+</html>

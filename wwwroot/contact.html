@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css"/>
+    <link rel="icon" type="image/png" href="images/BT-Logo.png">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="css/site.css" rel="stylesheet"/>
+    <title>Contact - Ballers Turf</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50">
+        <div class="navbar bg-base-100 shadow-md">
+            <div class="navbar-start">
+                <a href="index.html">
+                    <img src="images/BT-Logo.png" alt="Ballers Turf Logo" class="h-20 w-auto">
+                </a>
+            </div>
+            <div class="navbar-end">
+                <ul class="menu menu-horizontal px-1 font-bold text-lg">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="events.html">EVENTS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="admin.html">ADMIN</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Hero Section -->
+    <div class="hero min-h-[400px] contact-hero">
+        <div class="hero-overlay bg-black/50"></div>
+        <div class="hero-content text-center text-neutral-content">
+            <div class="max-w-md">
+                <h1 class="text-5xl font-bold">Contact Us</h1>
+                <p class="py-6">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="container mx-auto px-4 py-16">
+        <div class="max-w-2xl mx-auto">
+            <form id="contactForm">
+                <!-- Name Row -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">First Name</label>
+                        <input type="text" id="firstName" class="input bg-base-200 w-full" placeholder="e.g. John"/>
+                        <span class="text-error text-sm mt-1 hidden" id="firstNameError"></span>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Last Name</label>
+                        <input type="text" id="lastName" class="input bg-base-200 w-full" placeholder="e.g. Doe"/>
+                        <span class="text-error text-sm mt-1 hidden" id="lastNameError"></span>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="mt-4">
+                    <label class="block text-sm font-semibold mb-2">Email Address</label>
+                    <input type="email" id="email" class="input bg-base-200 w-full" placeholder="e.g. john.doe@example.com"/>
+                    <span class="text-error text-sm mt-1 hidden" id="emailError"></span>
+                </div>
+
+                <!-- Phone -->
+                <div class="mt-4">
+                    <label class="block text-sm font-semibold mb-2">Contact Phone</label>
+                    <input type="text" id="phone" class="input bg-base-200 w-full" placeholder="e.g. +44 123 456 7890"/>
+                    <span class="text-error text-sm mt-1 hidden" id="phoneError"></span>
+                </div>
+
+                <!-- Message -->
+                <div class="mt-4">
+                    <label class="block text-sm font-semibold mb-2">Your Message</label>
+                    <textarea id="message" class="textarea bg-base-200 w-full h-32" placeholder="Your Message"></textarea>
+                    <span class="text-error text-sm mt-1 hidden" id="messageError"></span>
+                </div>
+
+                <!-- Terms Checkbox -->
+                <div class="form-control mt-6">
+                    <label class="flex items-start gap-4">
+                        <input type="checkbox" id="acceptTerms" class="checkbox checkbox-primary flex-shrink-0"/>
+                        <span class="label-text flex-1">I agree to the Ballers Turf Terms and Conditions and Privacy Policy, and I can certify that I am 18 years of age or older.</span>
+                    </label>
+                    <span class="text-error text-sm mt-1 hidden" id="termsError"></span>
+                </div>
+
+                <!-- Mailing List Checkbox -->
+                <div class="form-control mt-4">
+                    <label class="flex items-start gap-4">
+                        <input type="checkbox" id="joinMailing" class="checkbox checkbox-primary flex-shrink-0"/>
+                        <span class="label-text flex-1">By ticking this box, you allow us to send you Ballers Turf thrilling news, offers, and updates via email.</span>
+                    </label>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-control mt-8">
+                    <button type="submit" class="btn btn-primary btn-lg w-full">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-base-200 text-base-content p-10">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <span class="footer-title">Ballers Turf</span>
+                    <p class="text-sm">Home of the Ballers. Dedicated to providing a space for the youth to grow.</p>
+                </div>
+                <div>
+                    <span class="footer-title">Quick Links</span>
+                    <a href="index.html" class="link link-hover block">Home</a>
+                    <a href="events.html" class="link link-hover block">Events</a>
+                    <a href="contact.html" class="link link-hover block">Contact</a>
+                    <a href="admin.html" class="link link-hover block">Admin</a>
+                </div>
+                <div>
+                    <span class="footer-title">Support</span>
+                    <a href="/help" class="link link-hover block">Help Centre</a>
+                    <a href="/terms" class="link link-hover block">Terms of Service</a>
+                    <a href="/privacy" class="link link-hover block">Privacy Policy</a>
+                    <a href="/faq" class="link link-hover block">FAQ</a>
+                </div>
+                <div>
+                    <span class="footer-title">Connect</span>
+                    <a href="https://www.facebook.com/" class="link link-hover block">Facebook</a>
+                    <a href="https://x.com/" class="link link-hover block">Twitter</a>
+                    <a href="https://www.instagram.com/" class="link link-hover block">Instagram</a>
+                    <a href="https://www.youtube.com/" class="link link-hover block">Youtube</a>
+                </div>
+            </div>
+        </div>        
+        
+        <div class="footer footer-center p-2 text-base-content mt-4">
+            <p class="text-sm">All images sourced from Google Images for educational use.</p>
+        </div>
+
+        <div class="footer footer-center p-4 text-base-content mt-6">
+            <p>Copyright © 2024 Ballers Turf - Martin Ofori N1264601</p>
+        </div>
+
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css"/>
+    <link rel="icon" type="image/png" href="images/BT-Logo.png">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="css/site.css" rel="stylesheet"/>
+    <title>Login - Ballers Turf</title>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="sticky top-0 z-50">
+    <div class="navbar bg-base-100 shadow-md">
+        <div class="navbar-start">
+            <a href="index.html">
+                <img src="images/BT-Logo.png" alt="Ballers Turf Logo" class="h-20 w-auto">
+            </a>
+        </div>
+        <div class="navbar-end">
+            <ul class="menu menu-horizontal px-1 font-bold text-lg" id="mainNav">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="events.html">EVENTS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="container mx-auto px-4 py-16 max-w-md">
+
+    <!-- Login/Register Tab Switcher -->
+    <div role="tablist" class="tabs tabs-boxed mb-8">
+        <a role="tab" class="tab tab-active" id="loginTab" onclick="showLogin()">Login</a>
+        <a role="tab" class="tab" id="registerTab" onclick="showRegister()">Register</a>
+    </div>
+
+    <!-- Login -->
+    <div id="loginForm">
+        <h2 class="text-3xl font-bold mb-6">Welcome Back</h2>
+        <form onsubmit="handleLogin(event)" class="space-y-4">
+            <div>
+                <label class="block text-sm font-semibold mb-2">Email</label>
+                <input type="email" id="loginEmail" class="input bg-base-200 w-full" required/>
+            </div>
+            <div>
+                <label class="block text-sm font-semibold mb-2">Password</label>
+                <input type="password" id="loginPassword" class="input bg-base-200 w-full" required/>
+            </div>
+            <div id="loginError" class="text-error text-sm hidden"></div>
+            <button type="submit" class="btn btn-primary w-full">Login</button>
+        </form>
+    </div>
+
+    <!-- Register -->
+    <div id="registerForm" class="hidden">
+        <h2 class="text-3xl font-bold mb-6">Create Account</h2>
+        <form onsubmit="handleRegister(event)" class="space-y-4">
+            <div>
+                <label class="block text-sm font-semibold mb-2">Full Name</label>
+                <input type="text" id="regName" class="input bg-base-200 w-full" required />
+            </div>
+            <div>
+                <label class="block text-sm font-semibold mb-2">Email</label>
+                <input type="email" id="regEmail" class="input bg-base-200 w-full" required />
+            </div>
+            <div>
+                <label class="block text-sm font-semibold mb-2">Password</label>
+                <input type="password" id="regPassword" class="input bg-base-200 w-full" required />
+            </div>
+            <div>
+                <label class="block text-sm font-semibold mb-2">Confirm Password</label>
+                <input type="password" id="regConfirmPassword" class="input bg-base-200 w-full" required />
+            </div>
+            <div>
+                <label class="block text-sm font-semibold mb-2">Phone Number</label>
+                <input type="tel" id="regPhone" class="input bg-base-200 w-full" />
+            </div>
+            <div>
+                <label class="block text-sm font-semibold mb-2">Date of Birth</label>
+                <input type="date" id="regDob" class="input bg-base-200 w-full" />
+            </div>
+            <div id="registerError" class="text-error text-sm hidden"></div>
+            <div id="registerSuccess" class="text-success text-sm hidden"></div>
+            <button type="submit" class="btn btn-primary w-full">Register</button>
+        </form>
+    </div>
+
+</section>
+
+<!-- Footer -->
+<footer class="bg-base-200 text-base-content p-10">
+    <div class="footer footer-center p-4 text-base-content">
+        <p>Copyright © 2024 Ballers Turf - Martin Ofori N1264601</p>
+    </div>
+</footer>
+
+<script src="js/api.js"></script>
+<script>
+    function showLogin() {
+        document.getElementById('loginForm').classList.remove('hidden');
+        document.getElementById('registerForm').classList.add('hidden');
+        document.getElementById('loginTab').classList.add('tab-active');
+        document.getElementById('registerTab').classList.remove('tab-active');
+    }
+
+    function showRegister() {
+        document.getElementById('loginForm').classList.add('hidden');
+        document.getElementById('registerForm').classList.remove('hidden');
+        document.getElementById('loginTab').classList.remove('tab-active');
+        document.getElementById('registerTab').classList.add('tab-active');
+    }
+
+    async function handleLogin(e) {
+        e.preventDefault();
+        const email = document.getElementById('loginEmail').value;
+        const password = document.getElementById('loginPassword').value;
+        const errorEl = document.getElementById('loginError');
+
+        try {
+            const data = await API.login(email, password);
+            if (data.roles && data.roles.includes('admin')) {
+                window.location.href = 'admin.html';
+            } else {
+                window.location.href = 'index.html';
+            }
+        } catch (err) {
+            errorEl.textContent = err.message;
+            errorEl.classList.remove('hidden');
+        }
+    }
+
+    async function handleRegister(e) {
+        e.preventDefault();
+        const fullName = document.getElementById('regName').value;
+        const email = document.getElementById('regEmail').value;
+        const password = document.getElementById('regPassword').value;
+        const phone = document.getElementById('regPhone').value;
+        const dob = document.getElementById('regDob').value;
+        const errorEl = document.getElementById('registerError');
+        const successEl = document.getElementById('registerSuccess');
+
+        const confirmPassword = document.getElementById('regConfirmPassword').value;
+        if (password !== confirmPassword) {
+            errorEl.textContent = 'Passwords do not match';
+            errorEl.classList.remove('hidden');
+            return;
+        }
+
+        try {
+            await API.register(fullName, email, password, phone, dob);
+            successEl.textContent = 'Account created successfully.';
+            successEl.classList.remove('hidden');
+            errorEl.classList.add('hidden');
+            setTimeout(showLogin, 1500);
+        } catch (err) {
+            errorEl.textContent = err.message;
+            errorEl.classList.remove('hidden');
+        }
+    }
+
+    if (API.isLoggedIn()) {
+        window.location.href = 'index.html';
+    }
+</script>
+</body>
+</html>

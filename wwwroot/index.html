@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css"/>
+    <link rel="icon" type="image/png" href="images/BT-Logo.png">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="css/site.css" rel="stylesheet"/>
+    <title>Home - Ballers Turf</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50">
+        <div class="navbar bg-base-100 shadow-md">
+            <div class="navbar-start">
+                <a href="index.html">
+                    <img src="images/BT-Logo.png" alt="Ballers Turf Logo" class="h-20 w-auto">
+                </a>
+            </div>
+            <div class="navbar-end">
+                <ul class="menu menu-horizontal px-1 font-bold text-lg">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="events.html">EVENTS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="admin.html">ADMIN</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carousel -->
+    <section class="container mx-auto text-white">   
+        <div class="carousel w-full h-screen shadow-lg">
+            <!-- Slide 1 -->
+            <div id="slide1" class="carousel-item relative w-full">
+                <img src="images/img1.jpg" alt="Players training under lights" class="w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-black/50 flex flex-col justify-center items-center p-8">
+                    <h1 class="font-bold">Welcome to Ballers Turf</h1>
+                    <p class="py-6">Discover events, explore our facilities, and get involved at Ballers Turf - home of the Ballers.</p>
+                    <a href="index.html" class="btn btn-lg btn-ghost text-white border-white hover:bg-white hover:text-black rounded-full mt-4">
+                        Get Started
+                    </a>
+                </div>
+                <a href="#slide3" class="btn btn-ghost absolute left-4 top-1/2 -translate-y-1/2">❮</a>
+                <a href="#slide2" class="btn btn-ghost absolute right-4 top-1/2 -translate-y-1/2">❯</a>
+            </div>
+
+            <!-- Slide 2 -->
+            <div id="slide2" class="carousel-item relative w-full">
+                <img src="images/img2.jpg" alt="Skyview of venue" class="w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-black/50 flex flex-col justify-center items-center p-8">
+                    <h1 class="font-bold text-white">Join the Action</h1>
+                    <p class="text-white mt-2">Explore tournaments, training sessions, and community activities.</p>
+                    <a href="events.html" class="btn btn-lg btn-ghost text-white border-white hover:bg-white hover:text-black rounded-full mt-4">
+                        Explore Events
+                    </a>
+                </div>
+                <a href="#slide1" class="btn btn-ghost absolute left-4 top-1/2 -translate-y-1/2">❮</a>
+                <a href="#slide3" class="btn btn-ghost absolute right-4 top-1/2 -translate-y-1/2">❯</a>
+            </div>
+
+            <!-- Slide 3 -->
+            <div id="slide3" class="carousel-item relative w-full">
+                <img src="images/img3.jpg" alt="Players shaking hands" class="w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-black/50 flex flex-col justify-center items-center p-8">
+                    <h1 class="font-bold text-white">Enquire Today</h1>
+                    <p class="text-white mt-2">Reach out to our team for bookings, support, and general enquiries.</p>
+                    <a href="contact.html" class="btn btn-lg btn-ghost text-white border-white hover:bg-white hover:text-black rounded-full mt-4">
+                        Contact Us
+                    </a>
+                </div>
+                <a href="#slide2" class="btn btn-ghost absolute left-4 top-1/2 -translate-y-1/2">❮</a>
+                <a href="#slide1" class="btn btn-ghost absolute right-4 top-1/2 -translate-y-1/2">❯</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Events Section -->
+    <section class="container mx-auto px-4 py-8">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold mb-4">Featured Events</h2>
+            <p class="text-lg text-base-content/70">Discover the latest activities commencing this week</p>
+        </div>
+
+        <div id="featuredEventsContainer" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="col-span-full text-center py-8">Loading events...</div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="container mx-auto px-4 py-8">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold mb-4">Latest News</h2>
+            <p class="text-lg text-base-content/70">Read the newest updates, stories, and event coverage from Baller's Turf.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="card bg-base-100 border border-gray-200 shadow">
+                <div class="card-body items-center text-center">
+                    <h3 class="card-title">Ballers Turf Partners With Local Schools to Promote Youth Football</h3>
+                    <p>Ballers Turf has teamed up with several schools in the area to support grassroots football development. The partnership will provide free coaching sessions, access to training facilities, and opportunities for young players to take part in organised matches throughout the season.</p>
+                </div>
+            </div>
+
+            <div class="card bg-base-100 border border-gray-200 shadow">
+                <div class="card-body items-center text-center">
+                    <h3 class="card-title">Ballers Turf Rolls Out Free Open Play Sundays for the Community</h3>
+                    <p>Ballers Turf is launching "Open Play Sundays," a new initiative offering free access to the AstroTurf pitch for the month. Players of all ages are welcome to drop in for casual matches, practice sessions, or friendly kickabouts in a relaxed and inclusive environment for a limited time.</p>
+                </div>
+            </div>
+
+            <div class="card bg-base-100 border border-gray-200 shadow">
+                <div class="card-body items-center text-center">
+                    <h3 class="card-title">Local Derby to Take Place at Ballers Turf This Weekend</h3>
+                    <p>Highly anticipated local derby scheduled for this weekend at Ballers Turf, drawing fans and players from across the community. Both teams are preparing for an intense, entertaining match as they battle for bragging rights on our newly installed pitch.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section class="container mx-auto px-4 py-10">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold mb-4">Our Facilities</h2>
+            <p class="text-lg text-base-content/70">A glimpse at what our venue has to offer</p>
+        </div>
+
+        <div class="carousel w-full">
+            <div id="feature1" class="carousel-item relative w-full">
+                <div class="card card-side bg-base-100 shadow-xl w-full">
+                    <figure class="w-5/8">
+                        <img src="images/facilities1.jpg" alt="Pitch" class="w-full h-full object-cover"/>
+                    </figure>
+                    <div class="card-body w-3/8">
+                        <h2 class="card-title text-2xl">Full-Size 4G AstroTurf Pitch</h2>
+                        <p>Our premium 4G AstroTurf pitch is where the magic happens - ready for those top-bins moments you swear weren't a fluke. Rain or shine, our surface stays match-ready, so you can focus on skills, last-minute winners, and proving your mate wrong about who's really the star of the show.</p>
+                    </div>
+                </div>
+                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#feature3" class="btn btn-ghost btn-circle">❮</a>
+                    <a href="#feature2" class="btn btn-ghost btn-circle">❯</a>
+                </div>
+            </div>
+
+            <div id="feature2" class="carousel-item relative w-full">
+                <div class="card card-side bg-base-100 shadow-xl w-full">
+                    <figure class="w-5/8">
+                        <img src="images/facilities2.jpg" alt="Changing Room" class="w-full h-full object-cover"/>
+                    </figure>
+                    <div class="card-body w-3/8">
+                        <h2 class="card-title text-2xl">Player Changing Rooms & Showers</h2>
+                        <p>Prepare like a pro in our modern changing rooms - spacious, clean, and perfect for pre-match feels and post-match debriefs. Finish strong with hot showers that feel even better after a muddy sliding tackle or a dramatic extra-time brace.</p>
+                    </div>
+                </div>
+                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#feature1" class="btn btn-ghost btn-circle">❮</a>
+                    <a href="#feature3" class="btn btn-ghost btn-circle">❯</a>
+                </div>
+            </div>
+
+            <div id="feature3" class="carousel-item relative w-full">
+                <div class="card card-side bg-base-100 shadow-xl w-full">
+                    <figure class="w-5/8">
+                        <img src="images/facilities3.jpg" alt="Sports Bar" class="w-full h-full object-cover"/>
+                    </figure>
+                    <div class="card-body w-3/8">
+                        <h2 class="card-title text-2xl">Refreshments & Social Area</h2>
+                        <p>Whether you're celebrating a win, recovering from an undeserved loss, or just pretending you're the chosen one, our modern social area has you covered. Grab a drink, vibe with your mates, talk football, or plan your next big fixture - it's the ultimate cooldown area off the pitch.</p>
+                    </div>
+                </div>
+                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#feature2" class="btn btn-ghost btn-circle">❮</a>
+                    <a href="#feature1" class="btn btn-ghost btn-circle">❯</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Partners Section -->
+    <section class="bg-base-100 py-10">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold mb-4">Our Brand Partners</h2>
+        </div>
+
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                <div class="w-32 h-20 flex items-center justify-center">
+                    <img src="images/logo1.jpg" alt="Partner 1" class="h-30 w-30">
+                </div>
+                <div class="w-32 h-20 flex items-center justify-center">
+                    <img src="images/logo2.png" alt="Partner 2" class="h-30 w-30">
+                </div>
+                <div class="w-32 h-20 flex items-center justify-center">
+                    <img src="images/logo3.png" alt="Partner 3" class="h-30 w-30">
+                </div>
+                <div class="w-32 h-20 flex items-center justify-center">
+                    <img src="images/logo4.png" alt="Partner 4" class="h-30 w-30">
+                </div>
+                <div class="w-32 h-20 flex items-center justify-center">
+                    <img src="images/logo5.png" alt="Partner 5" class="h-30 w-30">
+                </div>
+                <div class="w-32 h-20 flex items-center justify-center">
+                    <img src="images/logo6.png" alt="Partner 6" class="h-30 w-30">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customization controls using DaisyUI themes -->
+    <div class="bg-base-200 py-4">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap gap-4 items-center justify-center">
+                <!-- Font Size Controls -->
+                <div class="flex items-center gap-2">
+                    <span class="text-sm font-semibold">Font Size:</span>
+                    <button onclick="changeFontSize(14)" class="btn btn-sm">Small</button>
+                    <button onclick="changeFontSize(16)" class="btn btn-sm btn-active">Medium</button>
+                    <button onclick="changeFontSize(18)" class="btn btn-sm">Large</button>
+                </div>
+                
+                <!-- Theme Controls -->
+                <div class="flex items-center gap-2">
+                    <span class="text-sm font-semibold">Theme:</span>
+                    <button onclick="changeTheme('light')" class="btn btn-sm">Light</button>
+                    <button onclick="changeTheme('dark')" class="btn btn-sm">Dark</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-base-200 text-base-content p-10">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <span class="footer-title">Ballers Turf</span>
+                    <p class="text-sm">Home of the Ballers. Dedicated to providing a space for the youth to grow.</p>
+                </div>
+                <div>
+                    <span class="footer-title">Quick Links</span>
+                    <a href="index.html" class="link link-hover block">Home</a>
+                    <a href="events.html" class="link link-hover block">Events</a>
+                    <a href="contact.html" class="link link-hover block">Contact</a>
+                    <a href="admin.html" class="link link-hover block">Admin</a>
+                </div>
+                <div>
+                    <span class="footer-title">Support</span>
+                    <a href="/help" class="link link-hover block">Help Centre</a>
+                    <a href="/terms" class="link link-hover block">Terms of Service</a>
+                    <a href="/privacy" class="link link-hover block">Privacy Policy</a>
+                    <a href="/faq" class="link link-hover block">FAQ</a>
+                </div>
+                <div>
+                    <span class="footer-title">Connect</span>
+                    <a href="https://www.facebook.com/" class="link link-hover block">Facebook</a>
+                    <a href="https://x.com/" class="link link-hover block">Twitter</a>
+                    <a href="https://www.instagram.com/" class="link link-hover block">Instagram</a>
+                    <a href="https://www.youtube.com/" class="link link-hover block">Youtube</a>
+                </div>
+            </div>
+        </div>        
+        
+        <div class="footer footer-center p-2 text-base-content mt-4">
+            <p class="text-sm">All images sourced from Google Images for educational use.</p>
+        </div>
+
+        <div class="footer footer-center p-4 text-base-content mt-6">
+            <p>Copyright © 2024 Ballers Turf - Martin Ofori N1264601</p>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/site.js"></script>
+    
+</body>
+</html>

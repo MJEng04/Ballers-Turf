@@ -1,0 +1,48 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!-- Hero Section -->
+<div class="hero min-h-48 bg-base-200">
+    <div class="hero-content text-center">
+        <div class="max-w-md mb-4">
+            <h1 class="text-5xl font-bold">Welcome to Event App</h1>
+            <p class="py-6">Discover, create, and manage amazing events. Join thousands of users who trust our platform
+                for seamless event planning and coordination.</p>
+            <button class="btn btn-primary btn-lg rounded-full min-w-[300px]">Get Started</button>
+        </div>
+    </div>
+</div>
+
+<!-- Info Section -->
+<section class="container mx-auto px-4 py-8">
+    <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4">Why Choose Event App?</h2>
+        <p class="text-lg text-base-content/70">Everything you need to manage events efficiently</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card bg-base-100 border border-gray-200 shadow ">
+            <div class="card-body items-center text-center">
+                <h3 class="card-title">Easy to Use</h3>
+                <p>Intuitive interface designed for everyone</p>
+            </div>
+        </div>
+
+        <div class="card bg-base-100 border border-gray-200 shadow ">
+            <div class="card-body items-center text-center">
+                <h3 class="card-title">Powerful Features</h3>
+                <p>All the tools you need in one place</p>
+            </div>
+        </div>
+
+        <div class="card bg-base-100 border border-gray-200 shadow ">
+            <div class="card-body items-center text-center">
+                <h3 class="card-title">24/7 Support</h3>
+                <p>We're here to help whenever you need us</p>
+            </div>
+        </div>
+    </div>
+</section>
