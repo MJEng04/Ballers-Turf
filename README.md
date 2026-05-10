@@ -77,3 +77,22 @@ dotnet run
 **The API will be available at:** `http://localhost:5000`
 
 ## Project Structure
+ballers-turf/
+├── Controllers/        # API endpoint controllers
+├── DTOs/              # Data transfer objects
+├── Middleware/        # Custom middleware
+├── Models/            # Entity models and DbContext
+├── wwwroot/           # Static frontend files
+│   ├── index.html
+│   ├── events.html
+│   ├── bookings.html
+│   ├── admin.html
+│   └── js/
+├── Program.cs         # Application entry point
+├── Initialiser.cs     # Database seeding
+└── appsettings.example.json
+
+## Frontend
+The static frontend is served from `wwwroot/` and integrates directly 
+with the API endpoints. Pages include a homepage, events listing, 
+event detail, bookings management, contact form, and admin dashboard.
