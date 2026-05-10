@@ -92,20 +92,42 @@ dotnet run
 **The API will be available at:** `http://localhost:5000`
 
 ## Project Structure
+```
 ballers-turf/
-├── Controllers/        # API endpoint controllers
-├── DTOs/              # Data transfer objects
-├── Middleware/        # Custom middleware
-├── Models/            # Entity models and DbContext
-├── wwwroot/           # Static frontend files
+├── Controllers/
+│   ├── AuthController.cs
+│   ├── EventsController.cs
+│   ├── OrganizersController.cs
+│   ├── CommentsController.cs
+│   ├── MessagesController.cs
+│   └── BookingsController.cs
+├── DTOs/
+│   └── AuthDtos.cs
+├── Middleware/
+│   └── RedirectRootMiddleware.cs
+├── Models/
+│   ├── AppDbContext.cs
+│   ├── AppUser.cs
+│   ├── Event.cs
+│   ├── Booking.cs
+│   ├── Comment.cs
+│   ├── Message.cs
+│   └── Organizer.cs
+├── wwwroot/
 │   ├── index.html
 │   ├── events.html
 │   ├── bookings.html
 │   ├── admin.html
-│   └── js/
-├── Program.cs         # Application entry point
-├── Initialiser.cs     # Database seeding
+│   ├── login.html
+│   ├── css/
+│   ├── js/
+│   └── images/
+├── Pages/
+├── Properties/
+├── Program.cs
+├── Initialiser.cs
 └── appsettings.example.json
+```
 
 ## Frontend
 The static frontend is served from `wwwroot/` and integrates directly 
