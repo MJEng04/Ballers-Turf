@@ -55,6 +55,21 @@ full CRUD operations, and a static HTML/CSS/JS frontend.
 | Delete Own Comment | ❌ | ✅ | ✅ |
 | View Messages | ❌ | ❌ | ✅ |
 
+## Architecture
+The system is built around a clear class structure separating concerns:
+
+| Class | Responsibility |
+|---|---|
+| `AuthController` | User registration, login, JWT token generation |
+| `EventsController` | CRUD operations for events, search, eager loading |
+| `OrganizersController` | CRUD operations for event organisers |
+| `CommentsController` | CRUD operations for comments on events |
+| `MessagesController` | Contact form message creation and retrieval |
+| `BookingsController` | Event booking, ticket generation, cancellation |
+| `AppDbContext` | Entity Framework database context and relationships |
+| `AppUser` | User entity with role assignments |
+| `RedirectRootMiddleware` | Handles root URL redirection to frontend |
+
 ## How to Run
 
 **Prerequisites:**
